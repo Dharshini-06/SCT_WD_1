@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            background-color: #211818;
+            color: hsl(0, 54%, 64%);
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: hsl(0, 54%, 64%);
+            padding: 15px;
+            display: block;
+            transition: color 0.3s, background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #575757;
+            color: hsl(0, 54%, 64%);
+        }
+
+        .content {
+            margin-top: 60px;
+            padding: 20px;
+        }
+
+        section {
+            padding: 50px;
+            border-bottom: 1px solid hsl(0, 54%, 64%);
+        }
+
+        #navbar.scrolled {
+            background-color: #583f39;
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <section id="home">
+            <h1>Home</h1>
+            <p>Welcome to our website! We are committed to providing you with the best experience. Explore our services and learn more about what we do.</p>
+        </section>
+        <section id="about">
+            <h1>About Us</h1>
+            <p>We are a dedicated team of professionals passionate about delivering high-quality solutions. Our mission is to ensure customer satisfaction through excellence and innovation.</p>
+        </section>
+        <section id="services">
+            <h1>Services</h1>
+            <p>Our services include web development, graphic design, digital marketing, and IT consulting. We tailor our solutions to meet your specific needs and help your business grow.</p>
+        </section>
+        <section id="contact">
+            <h1>Contact</h1>
+            <p>Get in touch with us! You can reach us via email at contact@ourwebsite.com or call us at (123) 456-7890. We look forward to hearing from you.</p>
+        </section>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navbar = document.getElementById('navbar');
+            
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
